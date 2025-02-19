@@ -15,11 +15,11 @@ import os
 model = joblib.load("diabetes_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-if not os.path.exists(MODEL_PATH) or not os.path.exists(SCALER_PATH):
+if not os.path.exists(model) or not os.path.exists(scaler):
     st.error("Model files not found! Make sure 'diabetes_model.pkl' and 'scaler.pkl' are uploaded to GitHub.")
 else:
-    model = joblib.load(MODEL_PATH)
-    scaler = joblib.load(SCALER_PATH)
+    model = joblib.load(model)
+    scaler = joblib.load(scaler)
 
 
 # Streamlit UI
