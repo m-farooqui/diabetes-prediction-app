@@ -11,8 +11,15 @@ import numpy as np
 import joblib
 
 # Load the trained model and scaler
-model = joblib.load("C:/Users/Owner/OneDrive/Documents/diabetes_model.pkl")
-scaler = joblib.load("C:/Users/Owner/OneDrive/Documents/scaler.pkl")
+model = joblib.load("diabetes_model.pkl")
+scaler = joblib.load("scaler.pkl")
+
+if not os.path.exists(MODEL_PATH) or not os.path.exists(SCALER_PATH):
+    st.error("Model files not found! Make sure 'diabetes_model.pkl' and 'scaler.pkl' are uploaded to GitHub.")
+else:
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+
 
 # Streamlit UI
 st.title("Diabetes Prediction App")
