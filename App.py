@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
 # Load the trained model and scaler
 model = joblib.load("diabetes_model.pkl")
